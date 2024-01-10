@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.postkeret {
+  max-width: 500px;
+  position: relative;
+  left: 30%;
+  border: black solid 0.1px;
+  border-radius: 5%;
+  margin: 15px;
+}
+
+.commentcontainer:hover{
+  cursor: pointer;
+}
