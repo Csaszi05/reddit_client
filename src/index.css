@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: left;
 }
 
 code {
@@ -13,14 +14,30 @@ code {
 }
 
 .postkeret {
-  max-width: 500px;
+  max-width: 80%;
   position: relative;
-  left: 30%;
+  left: 10%;
   border: black solid 0.1px;
-  border-radius: 5%;
-  margin: 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+  padding: 5px;
+}
+.postkeret p{
+  text-align: left;
 }
 
-.commentcontainer:hover{
+.commentcontainer :hover{
   cursor: pointer;
+}
+
+.commentcontainer{
+  border-left: gray solid 1px;
+}
+.commentcontainer p{
+  font-size: 13px;
+  text-align: left;
+}
+
+.likeszam p{
+  text-align: center;
 }

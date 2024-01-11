@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../features/postSlice";
 import { fetchCommentById } from "../features/comment";
 import { Comment } from "./commentcomp";
+import { useNavigate } from "react-router-dom";
 
 export function Post({postadatok}){
     
@@ -24,14 +25,20 @@ export function Post({postadatok}){
     }
     else{bennevan = false;}
     
+    let navigate = useNavigate();
+
+    const goToPage = (path) => {
+        navigate(path); // Navigálj a megadott útvonalra
+      };
+    
     
 
     return(
         <div className="postkeret">
             <div className="votekeret">
-            
+            <h4>&#8679;</h4>
             <p className="likeszam">{postadatok.ups}</p>
-            
+            <h4>&#8681;</h4>
             </div>
     
             <div className="bejegyzes">
@@ -39,6 +46,7 @@ export function Post({postadatok}){
                 <p className="communitypost">{"r/"+postadatok.subreddit}</p>
                 <h3 className="postcim">{postadatok.title}</h3>
                 <p className="postszoveg">{postadatok.selftext}</p>
+                <button onClick={()=>{goToPage(postadatok.id)}}>tovább a postra</button>
                 {(postadatok.thumbnail) ? (<img src={postadatok.thumbnail} />): postkep=false}
                 <p onClick={()=> {dispatch(fetchCommentById(postadatok.id))}}>{"comments: "+ postadatok.num_comments}</p>
                 {bennevan ? comments : ""}
